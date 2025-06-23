@@ -4,6 +4,10 @@ import path from "path";
 import {
   OUTPUT_DIR
 } from "./constants";
+import { fetchPortfolio } from "./fetchPortfolio";
+
+
+const userAddress = process.env.USER_ADDRESS;
 
 const panic = <T>(message: string): T => {
   throw new Error(message);
@@ -27,9 +31,22 @@ const writeTree = (parentDir: string, tree: Tree) => {
   }
 };
 
-// TODO: fetch data from hyperliquid API
-const data = {
-  "test": "123",
+const main = async () => {
+  if (!userAddress) {
+    panic("USER_ADDRESS is not set");
+    return;
+  }
+
+  const accountPortfolio = await fetchPortfolio(userAddress);
+  const data = {
+    portfolio: accountPortfolio,
+  }
+  fs.writeFileSync(path.join(OUTPUT_DIR, "stats.json"), JSON.stringify(data, null, 2));
+  console.dir(data);
+  process.exit(0);
 }
 
-fs.writeFileSync(path.join(OUTPUT_DIR, "test.json"), JSON.stringify(data, null, 2));
+main().catch((e) => {
+  console.error(e);
+  process.exitCode = 1;
+});

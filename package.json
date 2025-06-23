@@ -8,7 +8,9 @@
     "build": "tsc --project tsconfig.json"
   },
   "dependencies": {
-    "ethers": "5.7.2"
+    "axios": "^1.10.0",
+    "ethers": "5.7.2",
+    "hyperliquid": "^1.7.6"
   },
   "devDependencies": {
     "@types/node": "22.13.1",
