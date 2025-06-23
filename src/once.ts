@@ -27,6 +27,7 @@ const writeTree = (parentDir: string, tree: Tree) => {
   }
 };
 
+// TODO: fetch data from hyperliquid API
 const data = {
   "test": "123",
 }
