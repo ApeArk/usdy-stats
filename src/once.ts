@@ -6,8 +6,8 @@ import {
 } from "./constants";
 import { fetchPortfolio } from "./fetchPortfolio";
 
-
-const userAddress = process.env.USER_ADDRESS;
+// NOTE: taking this address for testing purposes
+const userAddress = process.env.USER_ADDRESS || "0x2ba553d9f990a3b66b03b2dc0d030dfc1c061036";
 
 const panic = <T>(message: string): T => {
   throw new Error(message);
@@ -38,9 +38,7 @@ const main = async () => {
   }
 
   const accountPortfolio = await fetchPortfolio(userAddress);
-  const data = {
-    portfolio: accountPortfolio,
-  }
+  const data = accountPortfolio;
   fs.writeFileSync(path.join(OUTPUT_DIR, "stats.json"), JSON.stringify(data, null, 2));
   console.dir(data);
   process.exit(0);
