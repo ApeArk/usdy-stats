@@ -1,0 +1,18 @@
+{
+  "spotMid": 36.8245,
+  "perpMid": 36.8005,
+  "hypeSpotBalance": 0.01400892,
+  "hypePerpBalance": 101229.74,
+  "usdcSpotBalance": 4783973.19454711,
+  "perpAccountValue": 18152379.593173,
+  "cumFunding": -294170.134417,
+  "usdcWalletBalance": 16899760.61636711,
+  "accountValue": 23305687.46123742,
+  "stakingDelegations": [
+    {
+      "validator": "0xb8f45222a3246a2b0104696a1df26842007c5bc5",
+      "amount": 10029.57698396,
+      "lockedUntilTimestamp": 1746722492325
+    }
+  ]
+}
