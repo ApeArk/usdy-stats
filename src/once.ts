@@ -7,7 +7,7 @@ import {
 import { fetchPortfolio } from "./fetchPortfolio";
 
 // NOTE: taking this address for testing purposes
-const userAddress = process.env.USER_ADDRESS || "0x2ba553d9f990a3b66b03b2dc0d030dfc1c061036";
+const userAddress = process.env.USER_ADDRESS || "0x7bca5eb262f16AF84F4f3c2431b9Bfaa533bEe75";
 
 const panic = <T>(message: string): T => {
   throw new Error(message);
