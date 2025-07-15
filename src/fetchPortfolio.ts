@@ -77,6 +77,7 @@ export const fetchPortfolio = async (user: string) => {
     apr30d,
     accountValue,
     stakingDelegations: delegations,
+    lastUpdatedAt: new Date().getTime(),
   }
   return data;
 };

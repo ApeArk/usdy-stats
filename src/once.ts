@@ -37,8 +37,7 @@ const main = async () => {
     return;
   }
 
-  const accountPortfolio = await fetchPortfolio(userAddress);
-  const data = accountPortfolio;
+  const data = await fetchPortfolio(userAddress);
   fs.writeFileSync(path.join(OUTPUT_DIR, "stats.json"), JSON.stringify(data, null, 2));
   console.dir(data);
   process.exit(0);
