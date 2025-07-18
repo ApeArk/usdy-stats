@@ -54,6 +54,7 @@ export const fetchPortfolio = async (user: string) => {
   const hypePerpBalance = Number(hypePerpPosition?.szi || 0);
   const usdcSpotBalance = Number(spotBalances.balances.find((b) => b.coin === "USDC-SPOT")?.total || 0);
   const perpAccountValue = Number(clearinghouseState.marginSummary.accountValue || 0);
+  const perpWithdrawable = Number(clearinghouseState.withdrawable || 0);
   const cumFunding = -Number(hypePerpPosition?.cumFunding.allTime || 0);
   const avg7d = portfolio.avg7d;
   const avg30d = portfolio.avg30d;
@@ -68,6 +69,7 @@ export const fetchPortfolio = async (user: string) => {
     hypePerpBalance,
     usdcSpotBalance,
     perpAccountValue,
+    usdcTotalBalance: usdcSpotBalance + perpWithdrawable,
     cumFunding,
     cumFunding7d,
     cumFunding30d,
