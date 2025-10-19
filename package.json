@@ -10,7 +10,7 @@
   "dependencies": {
     "axios": "^1.10.0",
     "dayjs": "^1.11.13",
-    "ethers": "5.7.2",
+    "ethers": "6.15.0",
     "hyperliquid": "^1.7.6"
   },
   "devDependencies": {
